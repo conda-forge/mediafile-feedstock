@@ -1,5 +1,5 @@
 {% set name = "mediafile" %}
-{% set version = "0.10.0" %}
+{% set version = "0.10.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mediafile-{{ version }}.tar.gz
-  sha256: 98e0abb300d323bdfc90e2a3ae7f679436c429086e8254e6bfbc6b4f049d3624
+  sha256: 929642a17ee5023b9086221ce80cdc2c51d06021a890d4433b0bd5bd32f2b29f
 
 build:
   noarch: python
