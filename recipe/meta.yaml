@@ -17,11 +17,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
     - flit-core
   run:
-    - mutagen >=1.45
-    - python >=3.6
+    - mutagen >=1.46
+    - python >=3.7
     - six >=1.9
 
 test:
