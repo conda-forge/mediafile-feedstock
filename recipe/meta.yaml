@@ -18,12 +18,12 @@ requirements:
   host:
     - pip
     - python >=3.7
-    - flit-core
+    - flit-core >=2,<4
   run:
     - mutagen >=1.46
     - python >=3.7
-    - six >=1.9
-
+    - filetype >=1.2.0
+    
 test:
   imports:
     - mediafile
