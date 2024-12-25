@@ -1,29 +1,29 @@
 {% set name = "mediafile" %}
-{% set version = "0.8.1" %}
+{% set version = "0.13.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mediafile-{{ version }}.tar.gz
-  sha256: 878ccc378b77f2d6c175abea135ea25631f28c722e01e1a051924d962ebea165
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mediafile-{{ version }}.tar.gz
+  sha256: de71063e1bffe9733d6ccad526ea7dac8a9ce760105827f81ab0cb034c729a6d
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
-    - flit-core
+    - python {{ python_min }}
+    - flit-core >=2,<4
   run:
-    - mutagen >=1.45
-    - python >=3.6
-    - six >=1.9
-
+    - mutagen >=1.46
+    - python >={{ python_min }}
+    - filetype >=1.2.0
+    
 test:
   imports:
     - mediafile
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   dev_url: https://github.com/beetbox/mediafile
