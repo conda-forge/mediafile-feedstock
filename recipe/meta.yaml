@@ -12,16 +12,16 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - flit-core >=2,<4
   run:
     - mutagen >=1.46
-    - python >=3.7
+    - python >={{ python_min }}
     - filetype >=1.2.0
     
 test:
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   dev_url: https://github.com/beetbox/mediafile
