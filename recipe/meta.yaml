@@ -19,6 +19,7 @@ requirements:
     - pip
     - python {{ python_min }}
     - flit-core >=2,<4
+    - poetry-core
   run:
     - mutagen >=1.46
     - python >={{ python_min }}
